@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Carte:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Carte_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Carte" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Carte/web/Web3" />
+      <element id="javaee-facet-resources" facet="Carte/web/Web2" />
+      <element id="javaee-facet-resources" facet="Carte/web/Web" />
+    </root>
+  </artifact>
+</component>
