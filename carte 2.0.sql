@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `dishes` (
 -- Déchargement des données de la table `dishes`
 --
 
-INSERT INTO `dishes` (`id`, `title`, `description`, `category`, `price`, `catId`) VALUES
+INSERT INTO `dishes` (`id`, `title`, `description`, `price`, `catId`) VALUES
 (1, 'Steak au poivre', 'Le steak au poivre ou filet mignon au poivre est composé d\'un filet mignon de bœuf et d\'une sauce au poivre. Les grains de poivre forment une croûte sur le steak une fois cuits', 29.99, 2),
 (2, 'Magret de canard', 'Le magret est un filet de viande maigre, découpé à partir de la poitrine d\'une oie ou d\'un canard gras, engraissé par gavage, les mêmes qui servent à produire le confit et le foie gras', 25.45, 2),
 (3, 'Sole meunière', 'La sole meunière est un plat de poisson  constitué d\'une sole dont on a ôté la peau grise, enrobée de farine et frite dans du beurre à la poêle. ', 14.99, 1),
