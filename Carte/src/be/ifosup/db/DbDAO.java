@@ -3,7 +3,7 @@ package be.ifosup.db;
 import java.sql.*;
 
 public class DbDAO {
-    public static void initializeDatabase()
+    public static Connection initializeDatabase()
             throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -37,17 +37,17 @@ public class DbDAO {
 //            System.out.println("Request Error");
 //        }
 
-        finally {
+//        finally {
 //            if ( resultat != null) {
 //                resultat.close();
 //            }
 //            if ( statement != null){
 //                resultat.close();
 //            }
-            if (connection != null) {
-                connection.close();
-            }
-        }
+//            if (connection != null) {
+//                connection.close();
+//            }
+        return connection;
     }
 }
 
