@@ -13,11 +13,9 @@ public class ServiceDishes  {
     public static List<Dish> GetDishes() throws SQLException {
 
         List<Dish> dishes = new ArrayList<Dish>();
-//    private Statement stmt;
         Connection connection = DbDAO.initializeDatabase();
 
         try {
-//          Statement statement = connection.createStatement();
             PreparedStatement requete = connection.prepareStatement("SELECT * FROM dishes");
             ResultSet resultat = requete.executeQuery();
             ResultSetMetaData rsmd = resultat.getMetaData();
@@ -25,7 +23,9 @@ public class ServiceDishes  {
             while(resultat.next()){
                 String title = resultat.getString("title");
                 String description = resultat.getString("description");
-                Dish dish = new Dish(title,description,0);
+                float price = resultat.getFloat("price");
+                int id = resultat.getInt("id");
+                Dish dish = new Dish(title,description,price,id);
                 dishes.add(dish);
             }
 
@@ -37,9 +37,6 @@ public class ServiceDishes  {
             if (resultat != null) {
                 resultat.close();
             }
-//            if (statement != null) {
-//                resultat.close();
-//            }
             if (connection != null) {
                 connection.close();
             }

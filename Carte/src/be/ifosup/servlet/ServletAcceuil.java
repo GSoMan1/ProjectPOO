@@ -16,12 +16,7 @@ public class ServletAcceuil extends HttpServlet {
 
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        ResultSet dishes = null;
-//        try {
-//            dishes = DbDAO.initializeDatabase();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+
         try {
             request.setAttribute("dishes", ServiceDishes.GetDishes());
         } catch (SQLException e) {

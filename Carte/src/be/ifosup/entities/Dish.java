@@ -8,15 +8,15 @@ public class Dish {
     private String title;
     private String description;
     private float price;
-    private int catid;
+
 
     //Constructeurs
 
-    public Dish(String title, String description, float price) {
+    public Dish(String title, String description, float price, int id) {
         this.title = title;
         this.description = description;
         this.price = price;
-        this.catid = catid;
+        this.id = id;
     }
 
 
@@ -54,11 +54,4 @@ public class Dish {
         this.price = price;
     }
 
-    public int getCatid() {
-        return catid;
-    }
-
-    public void setCatid(int catid) {
-        this.catid = catid;
-    }
 }
