@@ -4,14 +4,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.ConsoleHandler;
+import be.ifosup.entities.Dish;
 
 public class ServiceDishes  {
     private static ConsoleHandler resultat;
     //todo
 
-    public List<List<String>> GetDishes() throws SQLException {
+    public static List<Dish> GetDishes() throws SQLException {
 
-        List<List<String>> dishes = new ArrayList<>();
+        List<Dish> dishes = new ArrayList<Dish>();
 //    private Statement stmt;
         Connection connection = DbDAO.initializeDatabase();
 
@@ -20,13 +21,14 @@ public class ServiceDishes  {
             PreparedStatement requete = connection.prepareStatement("SELECT * FROM dishes");
             ResultSet resultat = requete.executeQuery();
             ResultSetMetaData rsmd = resultat.getMetaData();
-            while (resultat.next()) {
-                List<String> Dish = new ArrayList<>();
-                for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-                    Dish.add(resultat.getString(i));
-                }
-                dishes.add(Dish);
+
+            while(resultat.next()){
+                String title = resultat.getString("title");
+                String description = resultat.getString("description");
+                Dish dish = new Dish(title,description,0);
+                dishes.add(dish);
             }
+
         } catch (SQLException e) {
             System.out.println("Request Error");
         }
@@ -46,3 +48,4 @@ public class ServiceDishes  {
         return dishes;
     }
 }
+
