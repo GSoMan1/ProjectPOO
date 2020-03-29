@@ -14,11 +14,9 @@ public class ServletAcceuil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
-
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
-            request.setAttribute("dishes", ServiceDishes.GetDishes());
+            request.setAttribute("dishes", ServiceDishes.GetDishes(0));
         } catch (SQLException e) {
             e.printStackTrace();
         }
