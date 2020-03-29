@@ -1,5 +1,31 @@
 package be.ifosup.servlet;
 
-public class ServletCategory {
-    //todo
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import be.ifosup.db.*;
+import java.sql.SQLException;
+
+import static java.lang.Integer.parseInt;
+
+@WebServlet(name = "ServletCategory" , urlPatterns = {"/category"})
+public class ServletCategory extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+
+    protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            System.out.println("in servcat");
+            int catid = parseInt(request.getParameter("catid"));
+            request.setAttribute("categories", ServiceCategories.GetCategory());
+            request.setAttribute("dishes", ServiceDishes.GetDishes(catid));
+            request.setAttribute("category", ServiceCategories.GetCategoryByID(catid));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.getRequestDispatcher("/views/category.jsp").forward(request, response);
+    }
 }

@@ -15,15 +15,9 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Poissons</a>
-                        <a class="dropdown-item" href="#">Viandes</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Vegetarien</a>
-                        <a class="dropdown-item" href="#">Vegetalien</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Soupes</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Desserts</a>
+                        <c:forEach items="${categories}" var="category">
+                            <a class="dropdown-item" href="./category?catid=${category.getId()}">${category.getName()}</a>
+                        </c:forEach>
                     </div>
                 </li>
             </ul>
