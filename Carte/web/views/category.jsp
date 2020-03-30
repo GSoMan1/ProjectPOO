@@ -22,7 +22,7 @@
                                     <button type="submit" class="btn btn-warning btn-sm">
                                         <i class="fas fa-pen"></i>
                                     </button>
-                                    <a href="delClub?id=${dishes.getId()}" class="btn btn-danger btn-sm">
+                                    <a href="deldish?id=${dishes.getId()}" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </form>

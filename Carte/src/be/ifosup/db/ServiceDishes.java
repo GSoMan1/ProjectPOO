@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.ConsoleHandler;
 import be.ifosup.entities.*;
+import com.mysql.cj.jdbc.MysqlDataSourceFactory;
 
 
 public class ServiceDishes  {
@@ -52,4 +53,15 @@ public class ServiceDishes  {
         }
         return dishes;
     }
+
+    public static void deldish(int id) throws SQLException {
+
+        String sql = "DELETE FROM dishes WHERE id = ?";
+        System.out.println("deldish service " +id);
+        Connection connection = DbDAO.initializeDatabase();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        statement.executeUpdate();
+    }
 }
+
