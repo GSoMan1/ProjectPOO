@@ -24,7 +24,7 @@ public class ServletDelCategory extends HttpServlet {
         } catch ( SQLException e) {
             e.printStackTrace();
         }
-
-        response.sendRedirect("./listCategory");
+        response.sendRedirect(request.getHeader("Referer"));
+        //response.sendRedirect("./listCategory");
     }
     }
