@@ -17,7 +17,7 @@ public class ServiceDishes  {
         Connection connection = DbDAO.initializeDatabase();
 
         try {
-            String statement ="";
+            String statement;
             if (catid == 0) {
                 statement = "SELECT * FROM dishes";
             }else{
