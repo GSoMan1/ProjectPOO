@@ -9,9 +9,11 @@
                 <tbody><!-- table body -->
                 <c:forEach items="${dishes}" var="dishes">
                     <tr>
+                        <td>${dishes.getId()}</td>
                         <td>${dishes.getTitle()}</td>
                         <td>${dishes.getDescription()}</td>
                         <td>${dishes.getPrice()}</td>
+                        <td>${dishes.getCategory().getName()}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <form action="update-club" method="post">

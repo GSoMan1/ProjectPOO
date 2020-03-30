@@ -9,6 +9,7 @@
                 <tbody><!-- table body -->
                 <c:forEach items="${dishes}" var="dishes">
                     <tr>
+                        <td>${dishes.getId()}</td>
                         <td>${dishes.getTitle()}</td>
                         <td>${dishes.getDescription()}</td>
                         <td>${dishes.getPrice()}</td>

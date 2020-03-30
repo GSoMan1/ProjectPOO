@@ -8,15 +8,17 @@ public class Dish {
     private String title;
     private String description;
     private float price;
+    private Category category;
 
 
     //Constructeurs
 
-    public Dish(String title, String description, float price, int id) {
+    public Dish(String title, String description, float price, int id, Category category) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.id = id;
+        this.category = category;
     }
 
 
@@ -54,4 +56,11 @@ public class Dish {
         this.price = price;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

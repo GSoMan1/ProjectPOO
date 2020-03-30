@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.ConsoleHandler;
-import be.ifosup.entities.Dish;
+import be.ifosup.entities.*;
 
 
 public class ServiceDishes  {
@@ -32,7 +32,8 @@ public class ServiceDishes  {
                 String description = resultat.getString("description");
                 Float price = resultat.getFloat("price");
                 int id = resultat.getInt("id");
-                Dish dish = new Dish(title,description,price,id);
+                Category category = ServiceCategories.GetCategoryByID(resultat.getInt("catid"));
+                Dish dish = new Dish(title, description, price, id, category);
                 dishes.add(dish);
             }
 

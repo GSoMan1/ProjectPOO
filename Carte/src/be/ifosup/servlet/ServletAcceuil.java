@@ -16,7 +16,6 @@ public class ServletAcceuil extends HttpServlet {
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            System.out.println("in servacc");
             request.setAttribute("categories", ServiceCategories.GetCategory());
             request.setAttribute("dishes", ServiceDishes.GetDishes(0));
         } catch (SQLException e) {

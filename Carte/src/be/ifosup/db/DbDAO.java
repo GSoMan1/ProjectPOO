@@ -7,7 +7,6 @@ public class DbDAO {
             throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Driver Ok");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -19,7 +18,6 @@ public class DbDAO {
 
         try {
             connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Connection Open");
         } catch (SQLException e) {
             System.out.println(e);
         }
