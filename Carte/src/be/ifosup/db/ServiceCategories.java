@@ -25,7 +25,6 @@ public class ServiceCategories {
                 Category category = new Category(id, name);
                 categories.add(category);
             }
-
         } catch (SQLException e) {
             System.out.println("Request Error");
         }
@@ -34,11 +33,9 @@ public class ServiceCategories {
             if (resultat != null) {
                 resultat.close();
             }
-
             if (connection != null) {
                 connection.close();
             }
-
         }
         return categories;
     }
@@ -75,4 +72,19 @@ public class ServiceCategories {
         }
         return category;
     }
+
+    public static void delcategory(int id) throws SQLException {
+
+        String sql = "DELETE FROM category WHERE id = ?";
+        String sql2 ="DELETE FROM dishes WHERE catid = ?";
+        System.out.println("category service " +id);
+        Connection connection = DbDAO.initializeDatabase();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        PreparedStatement statement1 = connection.prepareStatement(sql2);
+        statement.setInt(1, id);
+        statement1.setInt(1,id);
+        statement.executeUpdate();
+        statement1.executeUpdate();
+    }
+
 }
