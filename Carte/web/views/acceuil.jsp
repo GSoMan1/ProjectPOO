@@ -16,17 +16,13 @@
                         <td>${dishes.getCategory().getName()}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
-                                <form action="update-club" method="post">
-                                    <input type="hidden" value="list" name="from">
-                                    <input type="hidden" value="${dishes.getId()}" name="id">
-                                    <!-- boutons actions -->
-                                    <button type="submit" class="btn btn-warning btn-sm">
-                                        <i class="fas fa-pen"></i>
-                                    </button>
-                                    <a href="./deldish?id=${dishes.getId()}" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                </form>
+                                <!-- boutons actions -->
+                                <a href="./editdish?dishid=${dishes.getId()}" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a href="./deldish?id=${dishes.getId()}" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>

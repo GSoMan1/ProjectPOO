@@ -63,5 +63,42 @@ public class ServiceDishes  {
         statement.setInt(1, id);
         statement.executeUpdate();
     }
+
+    public static Dish GetDishByID(int id) throws SQLException {
+
+        Dish dish = null;
+        Connection connection = DbDAO.initializeDatabase();
+
+
+        try {
+            String statement = "SELECT * FROM dishes WHERE id = "+id;
+            PreparedStatement requete = connection.prepareStatement(statement);
+            ResultSet resultat = requete.executeQuery();
+
+
+            if(resultat.next()){
+                String title = resultat.getString("title");
+                String description = resultat.getString("description");
+                Float price = resultat.getFloat("price");
+                int dishid = resultat.getInt("id");
+                Category category = ServiceCategories.GetCategoryByID(resultat.getInt("catid"));
+                dish = new Dish(title, description, price, dishid, category);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Request Error");
+        }
+
+        finally {
+            if (resultat != null) {
+                resultat.close();
+            }
+
+            if (connection != null) {
+                connection.close();
+            }
+        }
+        return dish;
+    }
 }
 
