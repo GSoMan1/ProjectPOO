@@ -22,7 +22,14 @@
                     <label for="exampleFormControlSelect1">Categorie</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <c:forEach items="${categories}" var="category">
-                            <option value="${category.getId()}">${category.getName()}</option>
+                            <c:choose>
+                                <c:when test="${catid == category.getId()}">
+                                    <option value="${category.getId()}" selected>${category.getName()}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${category.getId()}">${category.getName()}</option>
+                                </c:otherwise>
+                            </c:choose>
                         </c:forEach>
                     </select>
                 </div>

@@ -25,7 +25,7 @@
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                     <!-- boutons actions -->
-                                    <a href="./editdish?dishid=${dishes.getId()}" class="btn btn-outline-secondary btn-sm">
+                                    <a href="./editdish?dishid=${dishes.getId()}&catid=${dishes.getCategory().getId()}" class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="deldish?id=${dishes.getId()}" class="btn btn-outline-secondary btn-sm">

@@ -21,7 +21,7 @@ public class ServletEditDish extends HttpServlet {
             int dishid = parseInt(request.getParameter("dishid"));
             request.setAttribute("categories", ServiceCategories.GetCategory());
             request.setAttribute("dish", ServiceDishes.GetDishByID(dishid));
-
+            request.setAttribute("catid", parseInt(request.getParameter("catid")));
         } catch (SQLException e) {
             e.printStackTrace();
         }
