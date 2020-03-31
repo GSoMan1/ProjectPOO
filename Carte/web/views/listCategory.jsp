@@ -13,17 +13,13 @@
                         <td>${categories.getName()}</td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
-                                <form action="update-club" method="post">
-                                    <input type="hidden" value="list" name="from">
-                                    <input type="hidden" value="${categories.getId()}" name="id">
                                     <!-- boutons actions -->
-                                    <button type="submit" class="btn btn-warning btn-sm">
-                                        <i class="fas fa-pen"></i>
-                                    </button>
-                                    <a href="./delcategory?id=${categories.getId()}" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash-alt"></i>
+                                    <a href="./editcategory?catid=${categories.getId()}" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fas fa-edit"></i>
                                     </a>
-                                </form>
+                                    <a href="./delcategory?id=${categories.getId()}" class="btn btn-outline-secondary btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                             </div>
                         </td>
                     </tr>

@@ -17,11 +17,11 @@
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <!-- boutons actions -->
-                                <a href="./editdish?dishid=${dishes.getId()}" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-pen"></i>
+                                <a href="./editdish?dishid=${dishes.getId()}" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="./deldish?id=${dishes.getId()}" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
+                                <a href="./deldish?id=${dishes.getId()}" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </div>
                         </td>
