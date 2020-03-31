@@ -4,7 +4,7 @@
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
         <div class="col-6"><!-- col-6 -->
-            <h4 class="text-light bg-dark">Categories</h4><!-- titre -->
+            <h4 class="text-light bg-dark">Categories </h4><!-- titre -->
             <table class="table table-striped table-hover table-bordered"><!-- affichage -->
                 <thead>
                 <tr>

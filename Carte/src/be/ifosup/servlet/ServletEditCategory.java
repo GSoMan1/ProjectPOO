@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import be.ifosup.db.*;
+import be.ifosup.entities.Category;
+
 import java.sql.SQLException;
 
 import static java.lang.Integer.parseInt;
@@ -14,14 +16,27 @@ import static java.lang.Integer.parseInt;
 @WebServlet(name = "ServletEditCategory" , urlPatterns = {"/editcategory"})
 public class ServletEditCategory extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int catid = parseInt(request.getParameter("categoryid"));
+        String catname = request.getParameter("catname");
+        Category category = new Category(catid, catname);
+        try {
+            ServiceCategories.editCategory(category);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("./listCategory");
     }
+
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             int catid = parseInt(request.getParameter("catid"));
             request.setAttribute("categories", ServiceCategories.GetCategory());
             request.setAttribute("dishes", ServiceDishes.GetDishes(catid));
-            request.setAttribute("category", ServiceCategories.GetCategoryByID(catid));
+            if (catid != 0)
+                request.setAttribute("category", ServiceCategories.GetCategoryByID(catid));
+            else
+                request.setAttribute("category", new Category(0, null));
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -102,3 +102,7 @@ public class ServiceDishes  {
     }
 }
 
+//      sql = "INSERT INTO category (title, description, price, catid) WHERE id = ";
+//        else
+//            sql ="UPDATE SET title = ? , description = ?, price = ?, catid = ? FROM category WHERE id = ?";
+

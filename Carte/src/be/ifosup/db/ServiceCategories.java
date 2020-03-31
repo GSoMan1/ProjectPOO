@@ -77,14 +77,49 @@ public class ServiceCategories {
 
         String sql = "DELETE FROM category WHERE id = ?";
         String sql2 ="DELETE FROM dishes WHERE catid = ?";
-        System.out.println("category service " +id);
         Connection connection = DbDAO.initializeDatabase();
-        PreparedStatement statement = connection.prepareStatement(sql);
-        PreparedStatement statement1 = connection.prepareStatement(sql2);
-        statement.setInt(1, id);
-        statement1.setInt(1,id);
-        statement.executeUpdate();
-        statement1.executeUpdate();
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement1 = connection.prepareStatement(sql2);
+            statement.setInt(1, id);
+            statement1.setInt(1, id);
+            statement.executeUpdate();
+            statement1.executeUpdate();
+        }
+        catch (SQLException e) {
+            System.out.println("Request Error");
+        }
+        finally {
+            if (connection != null) {
+                connection.close();
+            }
+        }
+
     }
 
+    public static void editCategory(Category category) throws SQLException {
+        String sql;
+        if (category.getId() == 0)
+            sql = "INSERT INTO category (category.name) VALUES (?)";
+        else
+            sql = "UPDATE category SET category.name = ? WHERE id = ?";
+
+        Connection connection = DbDAO.initializeDatabase();
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, category.getName());
+            if (category.getId() != 0)
+                statement.setInt(2, category.getId());
+            statement.executeUpdate();
+        }
+        catch (SQLException e) {
+            System.out.println("Request Error");
+        }
+        finally {
+            if (connection != null) {
+                connection.close();
+            }
+
+        }
+    }
 }
