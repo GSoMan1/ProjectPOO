@@ -1,10 +1,11 @@
 <%@include file="../templates/header.jsp"%>
 <%@include file="../templates/navigation.jsp"%>
+<%@ page pageEncoding="UTF-8" %>
 
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
         <div class="col-6"><!-- col-6 -->
-            <form method="post">
+            <form method="post" accept-charset="UTF-8">
                 <input type="hidden" name="dishid" value="${dish.getId()}">
                 <div class="form-group">
                     <label for="dishtitle">Titre plat</label>

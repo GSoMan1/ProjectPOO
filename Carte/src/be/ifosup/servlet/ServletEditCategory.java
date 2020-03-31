@@ -16,6 +16,8 @@ import static java.lang.Integer.parseInt;
 @WebServlet(name = "ServletEditCategory" , urlPatterns = {"/editcategory"})
 public class ServletEditCategory extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8" );
+        response.setCharacterEncoding("UTF-8" );
         int catid = parseInt(request.getParameter("categoryid"));
         String catname = request.getParameter("catname");
         Category category = new Category(catid, catname);

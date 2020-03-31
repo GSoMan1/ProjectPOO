@@ -17,8 +17,10 @@ import static java.lang.Integer.parseInt;
 @WebServlet(name = "ServletEditDish" , urlPatterns = {"/editdish"})
 public class ServletEditDish extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8" );
+        response.setCharacterEncoding("UTF-8" );
         int dishid = parseInt(request.getParameter("dishid"));
-        String dishtitle = request.getParameter("dishtile");
+        String dishtitle = request.getParameter("dishtitle");
         String dishdescription = request.getParameter("dishdescription");
         float dishprice = Float.parseFloat(request.getParameter("dishprice"));
         int catid = parseInt(request.getParameter("dishcatid"));
