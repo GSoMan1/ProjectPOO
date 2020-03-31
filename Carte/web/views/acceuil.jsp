@@ -4,8 +4,18 @@
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
         <div class="col-6"><!-- col-6 -->
-            <h4 class="text-light bg-dark">Dishes</h4><!-- titre -->
-             <table class="table table-striped table-hover table-bordered"><!-- affichage -->
+            <h4 class="text-light bg-dark">Plats</h4><!-- titre -->
+            <table class="table table-striped table-hover table-bordered"><!-- affichage -->
+                <thead>
+                    <tr>
+                        <td><h5>ID</h5></td>
+                        <td><h5>Titre</h5></td>
+                        <td><h5>Description</h5></td>
+                        <td><h5>Prix</h5></td>
+                        <td><h5>Categories</h5></td>
+                        <td><h5>Options</h5></td>
+                    </tr>
+                </thead>
                 <tbody><!-- table body -->
                 <c:forEach items="${dishes}" var="dishes">
                     <tr>
@@ -29,6 +39,10 @@
                 </c:forEach>
                 </tbody><!-- fin body -->
             </table><!-- fin affichage -->
+            <!-- bouton ajout -->
+            <a href="./editdish?dishid=0" class="btn btn-outline-success btn-lg btn-block">
+                <i class="fas fa-plus"></i>Ajouter un plat
+            </a>
         </div><!-- fin col-6 -->
     </main>
 </div>

@@ -6,6 +6,13 @@
         <div class="col-6"><!-- col-6 -->
             <h4 class="text-light bg-dark">Categories</h4><!-- titre -->
             <table class="table table-striped table-hover table-bordered"><!-- affichage -->
+                <thead>
+                <tr>
+                    <td><h5>ID</h5></td>
+                    <td><h5>Nom</h5></td>
+                    <td><h5>Options</h5></td>
+                </tr>
+                </thead>
                 <tbody><!-- table body -->
                 <c:forEach items="${categories}" var="categories">
                     <tr>
@@ -26,6 +33,10 @@
                 </c:forEach>
                 </tbody><!-- fin body -->
             </table><!-- fin affichage -->
+            <!-- bouton ajout -->
+            <a href="./editcategory?catid=0" class="btn btn-outline-success btn-lg btn-block">
+                <i class="fas fa-plus"></i>Ajouter une categorie
+            </a>
         </div><!-- fin col-6 -->
     </main>
 </div>
