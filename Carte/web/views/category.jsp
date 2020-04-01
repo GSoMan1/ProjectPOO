@@ -1,6 +1,7 @@
 <%@include file="../templates/header.jsp"%>
 <%@include file="../templates/navigation.jsp"%>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
@@ -22,7 +23,7 @@
                         <td>${dishes.getId()}</td>
                         <td>${dishes.getTitle()}</td>
                         <td>${dishes.getDescription()}</td>
-                        <td>${dishes.getPrice()}</td>
+                        <td><fmt:formatNumber value="${dishes.getPrice()}" type="currency" currencySymbol="&euro;" /></td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                     <!-- boutons actions -->

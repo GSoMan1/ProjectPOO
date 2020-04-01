@@ -1,5 +1,6 @@
 <%@include file="../templates/header.jsp"%>
 <%@include file="../templates/navigation.jsp"%>
+<%@ page pageEncoding="UTF-8" %>
 
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
