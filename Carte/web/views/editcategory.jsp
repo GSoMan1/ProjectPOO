@@ -7,11 +7,11 @@
             <form method="post">
                 <input type="hidden" name="categoryid" value="${category.getId()}">
                 <div class="form-group">
-                    <label for="catname">Nom Categorie</label>
+                    <label for="catname">Nom Catégorie</label>
                     <input type="text" class="form-control" id="catname" name="catname" value="${category.getName()}">
                 </div>
                 <div class="form-group">
-                    <button type="submit">Save</button>
+                    <button type="submit">OK</button>
                 </div>
             </form>
         </div><!-- fin col-6 -->

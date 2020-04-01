@@ -1,5 +1,6 @@
 <%@include file="../templates/header.jsp"%>
 <%@include file="../templates/navigation.jsp"%>
+<%@ page pageEncoding="UTF-8" %>
 
 <div class="container contenu"><!-- container -->
     <main class="row justify-content-center">
@@ -12,7 +13,7 @@
                         <td><h5>Titre</h5></td>
                         <td><h5>Description</h5></td>
                         <td><h5>Prix</h5></td>
-                        <td><h5>Categories</h5></td>
+                        <td><h5>Catégories</h5></td>
                         <td><h5>Options</h5></td>
                     </tr>
                 </thead>

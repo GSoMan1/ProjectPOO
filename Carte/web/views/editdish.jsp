@@ -20,7 +20,7 @@
                     <input type="text" class="form-control" id="dishprice" name="dishprice" value="${dish.getPrice()}">
                 </div>
                 <div class="form-group">
-                    <label for="dishcatid">Categorie</label>
+                    <label for="dishcatid">Catégorie</label>
                     <select class="form-control" id="dishcatid" name="dishcatid">
                         <c:forEach items="${categories}" var="category">
                             <c:choose>

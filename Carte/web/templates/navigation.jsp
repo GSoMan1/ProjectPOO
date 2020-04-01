@@ -13,11 +13,11 @@
                     <a class="nav-link" href="./">Carte<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="./listCategory">Liste Categories<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="./listCategory">Liste Catégories<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
+                        Catégories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <c:forEach items="${categories}" var="category">
