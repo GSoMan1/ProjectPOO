@@ -9,7 +9,7 @@ import java.util.logging.ConsoleHandler;
 public class ServiceCategories {
     private static ConsoleHandler resultat;
 
-    public static List<Category> GetCategory() throws SQLException {
+    public static List<Category> getCategories() throws SQLException {
 
         List<Category> categories = new ArrayList<Category>();
         Connection connection = DbDAO.initializeDatabase();
@@ -40,7 +40,7 @@ public class ServiceCategories {
         return categories;
     }
 
-    public static Category GetCategoryByID(int catid) throws SQLException {
+    public static Category getCategoryByID(int catid) throws SQLException {
 
         Connection connection = DbDAO.initializeDatabase();
 
@@ -73,7 +73,7 @@ public class ServiceCategories {
         return category;
     }
 
-    public static void delcategory(int id) throws SQLException {
+    public static void delCategory(int id) throws SQLException {
 
         String sql = "DELETE FROM category WHERE id = ?";
         String sql2 ="DELETE FROM dishes WHERE catid = ?";

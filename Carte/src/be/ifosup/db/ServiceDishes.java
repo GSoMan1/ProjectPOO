@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.ConsoleHandler;
 import be.ifosup.entities.*;
-import com.mysql.cj.jdbc.MysqlDataSourceFactory;
 
 
 public class ServiceDishes  {
     private static ConsoleHandler resultat;
-    //todo
 
-    public static List<Dish> GetDishes(int catid) throws SQLException {
+    public static List<Dish> getDishes(int catid) throws SQLException {
 
         List<Dish> dishes = new ArrayList<Dish>();
         Connection connection = DbDAO.initializeDatabase();
@@ -31,9 +29,9 @@ public class ServiceDishes  {
             while(resultat.next()){
                 String title = resultat.getString("title");
                 String description = resultat.getString("description");
-                Float price = resultat.getFloat("price");
+                float price = resultat.getFloat("price");
                 int id = resultat.getInt("id");
-                Category category = ServiceCategories.GetCategoryByID(resultat.getInt("catid"));
+                Category category = ServiceCategories.getCategoryByID(resultat.getInt("catid"));
                 Dish dish = new Dish(title, description, price, id, category);
                 dishes.add(dish);
             }
@@ -54,7 +52,7 @@ public class ServiceDishes  {
         return dishes;
     }
 
-    public static void deldish(int id) throws SQLException {
+    public static void delDish(int id) throws SQLException {
 
         String sql = "DELETE FROM dishes WHERE id = ?";
         System.out.println("deldish service " +id);
@@ -64,7 +62,7 @@ public class ServiceDishes  {
         statement.executeUpdate();
     }
 
-    public static Dish GetDishByID(int id) throws SQLException {
+    public static Dish getDishByID(int id) throws SQLException {
 
         Dish dish = null;
         Connection connection = DbDAO.initializeDatabase();
@@ -81,7 +79,7 @@ public class ServiceDishes  {
                 String description = resultat.getString("description");
                 Float price = resultat.getFloat("price");
                 int dishid = resultat.getInt("id");
-                Category category = ServiceCategories.GetCategoryByID(resultat.getInt("catid"));
+                Category category = ServiceCategories.getCategoryByID(resultat.getInt("catid"));
                 dish = new Dish(title, description, price, dishid, category);
             }
 

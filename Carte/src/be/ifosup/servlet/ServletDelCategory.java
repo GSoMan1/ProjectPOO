@@ -19,7 +19,7 @@ public class ServletDelCategory extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         try {
-            ServiceCategories.delcategory(id);
+            ServiceCategories.delCategory(id);
         } catch ( SQLException e) {
             e.printStackTrace();
         }

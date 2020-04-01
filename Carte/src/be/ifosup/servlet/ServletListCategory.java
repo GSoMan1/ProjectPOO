@@ -1,7 +1,6 @@
 package be.ifosup.servlet;
 
 import be.ifosup.db.ServiceCategories;
-import be.ifosup.db.ServiceDishes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,10 +18,10 @@ public class ServletListCategory extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            request.setAttribute("categories", ServiceCategories.GetCategory());
+            request.setAttribute("categories", ServiceCategories.getCategories());
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("/views/listCategory.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/listcategory.jsp").forward(request, response);
     }
 }

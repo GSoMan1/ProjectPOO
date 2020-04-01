@@ -33,10 +33,10 @@ public class ServletEditCategory extends HttpServlet {
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             int catid = parseInt(request.getParameter("catid"));
-            request.setAttribute("categories", ServiceCategories.GetCategory());
-            request.setAttribute("dishes", ServiceDishes.GetDishes(catid));
+            request.setAttribute("categories", ServiceCategories.getCategories());
+            request.setAttribute("dishes", ServiceDishes.getDishes(catid));
             if (catid != 0)
-                request.setAttribute("category", ServiceCategories.GetCategoryByID(catid));
+                request.setAttribute("category", ServiceCategories.getCategoryByID(catid));
             else
                 request.setAttribute("category", new Category(0, null));
         } catch (SQLException e) {
