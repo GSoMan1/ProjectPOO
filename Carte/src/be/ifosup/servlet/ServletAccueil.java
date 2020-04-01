@@ -9,8 +9,8 @@ import java.io.IOException;
 import be.ifosup.db.*;
 import java.sql.SQLException;
 
-@WebServlet(name = "ServletAcceuil" , urlPatterns = {"/"})
-public class ServletAcceuil extends HttpServlet {
+@WebServlet(name = "ServletAccueil" , urlPatterns = {"/"})
+public class ServletAccueil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
@@ -21,6 +21,6 @@ public class ServletAcceuil extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        request.getRequestDispatcher("/views/acceuil.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/accueil.jsp").forward(request, response);
     }
 }
