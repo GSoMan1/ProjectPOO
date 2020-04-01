@@ -16,7 +16,7 @@ public class ServiceCategories {
 
         try {
 
-            PreparedStatement requete = connection.prepareStatement("SELECT * FROM category");
+            PreparedStatement requete = connection.prepareStatement("SELECT * FROM categories");
             ResultSet resultat = requete.executeQuery();
 
             while(resultat.next()){
@@ -46,7 +46,7 @@ public class ServiceCategories {
 
         Category category = null;
         try {
-            PreparedStatement requete = connection.prepareStatement("SELECT * FROM category WHERE id="+catid);
+            PreparedStatement requete = connection.prepareStatement("SELECT * FROM categories WHERE id="+catid);
             ResultSet resultat = requete.executeQuery();
 
 
@@ -75,7 +75,7 @@ public class ServiceCategories {
 
     public static void delCategory(int id) throws SQLException {
 
-        String sql = "DELETE FROM category WHERE id = ?";
+        String sql = "DELETE FROM categories WHERE id = ?";
         String sql2 ="DELETE FROM dishes WHERE catid = ?";
         Connection connection = DbDAO.initializeDatabase();
         try {
@@ -100,9 +100,9 @@ public class ServiceCategories {
     public static void editCategory(Category category) throws SQLException {
         String sql;
         if (category.getId() == 0)
-            sql = "INSERT INTO category (category.name) VALUES (?)";
+            sql = "INSERT INTO categories (categories.name) VALUES (?)";
         else
-            sql = "UPDATE category SET category.name = ? WHERE id = ?";
+            sql = "UPDATE categories SET categories.name = ? WHERE id = ?";
 
         Connection connection = DbDAO.initializeDatabase();
         try {
