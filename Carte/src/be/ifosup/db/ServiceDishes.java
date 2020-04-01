@@ -8,6 +8,7 @@ import be.ifosup.entities.*;
 
 
 public class ServiceDishes  {
+
     private static ConsoleHandler resultat;
 
     public static List<Dish> getDishes(int catid) throws SQLException {
@@ -55,7 +56,6 @@ public class ServiceDishes  {
     public static void delDish(int id) throws SQLException {
 
         String sql = "DELETE FROM dishes WHERE id = ?";
-        System.out.println("deldish service " +id);
         Connection connection = DbDAO.initializeDatabase();
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
@@ -100,6 +100,7 @@ public class ServiceDishes  {
     }
 
     public static void editDishes(Dish dish) throws SQLException {
+        
         String sql;
         if (dish.getId() == 0)
             sql = "INSERT INTO dishes (title, description, price, catid) VALUES (?,?,?,?)";
