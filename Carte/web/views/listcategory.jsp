@@ -25,7 +25,7 @@
                                     <a href="./editcategory?catid=${categories.getId()}" class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="./delcategory?id=${categories.getId()}" class="btn btn-outline-secondary btn-sm">
+                                    <a href="./delcategory?id=${categories.getId()}" onclick="return confirm('Êtes-vous sûr vouloir supprimer cette catégorie ?\nTous les plats de cette catégorie seront supprimés !')"  class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-trash"></i>
                                     </a>
                             </div>

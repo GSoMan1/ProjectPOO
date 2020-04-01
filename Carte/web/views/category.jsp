@@ -30,7 +30,7 @@
                                     <a href="./editdish?dishid=${dishes.getId()}&catid=${dishes.getCategory().getId()}" class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="deldish?id=${dishes.getId()}" class="btn btn-outline-secondary btn-sm">
+                                    <a href="deldish?id=${dishes.getId()}" onclick="return confirm('Êtes-vous sûr vouloir supprimer ce plat?')"  class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-trash"></i>
                                     </a>
                             </div>
